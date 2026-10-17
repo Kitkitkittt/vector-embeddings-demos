@@ -42,6 +42,21 @@ These notebooks are also provided, but aren't necessary unless you're generating
 * [Generate OpenAI embeddings for datasets](prep_openai.ipynb)
 * [Generate Word2Vec embeddings for datasets](prep_word2vec_gnews.ipynb)
 
+## Verify the search demos offline
+
+After installing the requirements, run:
+
+```shell
+python -m pip install pytest pytest-cov
+python -m pytest
+```
+
+The tests execute the English and Spanish search notebooks' offline code cells
+against known vectors. They verify exhaustive cosine ranking, real HNSW neighbor
+distances, and movie-title mapping without an embedding API call or credentials.
+The `offline-search-*` cell tags separate these consumers from the provider calls;
+keep them on the corresponding function, index, and result cells when editing.
+
 ## Resources
 
 Each notebook has resources at the bottom to dig further into that topic. Here are some additional general resources:
