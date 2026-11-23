@@ -21,7 +21,7 @@ If a `swarm-ready` skill is installed, load it. Otherwise execute the documented
 
 ## Repository starting point
 
-Read: [README.md](README.md), [pyproject.toml](pyproject.toml), [tests](tests), [.github](.github).
+Read: [README.md](README.md), [contribution instructions](.github/CONTRIBUTING.md), [pyproject.toml](pyproject.toml), and [search regression](tests/test_search_notebooks.py).
 
 Continue an existing approved issue or a clearly scoped user objective after inspecting the source map below. If none is selected, return the smallest useful improvement and its verifier as the handoff; do not begin a portfolio-wide rewrite.
 
@@ -41,7 +41,9 @@ The base above is an inspection snapshot, not a permanent working branch. Refres
 
 ## Verification starting point
 
-No executable acceptance command was established by this bounded source inspection. Read `README.md`, `pyproject.toml`, `tests`, `.github` and record the narrowest existing check before implementation. Do not invent a `test` command or infer that the repository has no tests from this gap. For a documentation-only task, check links, factual source anchors and whitespace; do not build unrelated application code.
+For changes to the search examples, follow the README's [offline setup and pytest command](README.md#verify-the-search-demos-offline). Run it from the repository root with both `search.ipynb` and `spanish/search.ipynb` present. Expect both parameterized cases in `tests/test_search_notebooks.py` to pass: exhaustive cosine ranking, HNSW distances, and the mapping from neighbor labels to movie titles. The test executes only tagged cells against synthetic vectors; keep those tags attached to their existing offline roles and leave provider cells unexecuted.
+
+This check does not qualify notebook execution end to end, OpenAI or Azure calls, or data regeneration. For a docs-only change, verify the local links, source claims, and whitespace without running notebooks.
 
 ## Required handoff result
 
