@@ -19,6 +19,8 @@ Vector embeddings are commonly used for similarity search, fraud detection, reco
 
 This repository contains a visual exploration of vectors, using several embedding models.
 
+For bounded agent work and verification, see the [swarm-ready handoff](SWARM_READY.md).
+
 Before running the notebooks, install the requirements:
 
 ```shell
